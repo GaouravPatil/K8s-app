@@ -6,10 +6,9 @@ Minimalistic Python app with 3 APIs + health check.
 
 | Method | Endpoint      | Description       |
 |--------|---------------|-------------------|
-| GET    | `/`           | Health check      |
-| POST   | `/users`      | Create a user     |
-| GET    | `/users`      | List all users    |
-| GET    | `/users/<id>` | Get one user      |
+| GET    | `/health`     | Health check      |
+| POST   | `/`           | save details     |
+
 
 ## Setup
 
@@ -39,17 +38,9 @@ Table `users` is auto-created on startup.
 
 ```bash
 # health
-curl http://localhost:5000/
-
-# create
-curl -X POST http://localhost:5000/users \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Aarav","email":"aarav@example.com"}'
+curl http://localhost:5000/health
 
 # list
-curl http://localhost:5000/users
-
-# get one
-curl http://localhost:5000/users/1
+curl http://localhost:5000/
 ```
 # K8s-app
